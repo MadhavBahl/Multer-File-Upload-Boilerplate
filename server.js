@@ -35,9 +35,9 @@ app.get('/', (req, res) => {
     res.render('index.hbs');
 });
 
-// POST /singleUpload for single file upload
+// POST /upload for file upload
 /* ===== Make sure that file name matches the name attribute in your html ===== */
-app.post('/singleUpload', upload.single('myFile'), (req, res) => {
+app.post('/upload', upload.single('myFile'), (req, res) => {
     if (req.file) {
         console.log('Uploading file...');
         var filename = req.file.filename;
