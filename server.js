@@ -53,6 +53,11 @@ app.post('/upload', upload.single('myFile'), (req, res) => {
     res.render('index.hbs', { status: uploadStatus, filename: `Name Of File: ${filename}` });
 });
 
+// GET /temp to render temp.hbs, for dev purposes
+app.get('/temp', (req, res) => {
+    res.render('temp.hbs');
+});
+
 // To make the server live
 app.listen(port, () => {
     console.log(`App is live on port ${port}`);
